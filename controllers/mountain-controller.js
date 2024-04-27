@@ -4,7 +4,7 @@ const knex = require('knex')(require('../knexfile'));
 //GET mountains database
 const index = async (_req, res) => {
 	try {
-		const data = await knex('mountains').select('*');
+		const data = await knex('mountains');
 		res.status(200).json(data);
 	} catch (error) {
 		res.status(400).send(`Error retrieving mountains: ${error.message}`);
@@ -23,8 +23,21 @@ const getProvince = async (_req, res) => {
 };
 
 
+//GET /api/mountain
+const getMountainsByProvince = async (req, res) => {
+	try {
+			const province = req.params.province;
+			const data = await knex('mountains').where('province', province);
+			res.status(200).json(data);
+	} catch (error) {
+			res.status(400).send(`Error retrieving mountains: ${error.message}`);
+	}
+};
+
+
 
 module.exports = {
 	index,
-	getProvince
+	getProvince,
+	getMountainsByProvince
 }
