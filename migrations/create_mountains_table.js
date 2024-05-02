@@ -4,6 +4,7 @@ exports.up = function (knex) {
 		table.string('name').notNullable();
 		table.float('lat').notNullable();
 		table.float('lon').notNullable();
+		// table.string('img');
 		table.string('province').notNullable();
 		table.string('country').notNullable();
 	});
