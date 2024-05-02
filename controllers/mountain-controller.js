@@ -16,6 +16,8 @@ const index = async (_req, res) => {
 const getProvince = async (_req, res) => {
 	try {
 		const data = await knex('mountains').select('province').distinct();
+		// const provinceImageUrl = `http://localhost:8080/images/province/${province}.jpeg`
+
 		res.status(200).json(data);
 	} catch (error) {
 		res.status(400).send(`Error retrieving province: ${error.message}`);

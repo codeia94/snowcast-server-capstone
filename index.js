@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use("/api", mountainRouter );
 app.use('/icons', express.static('public/icons'));
+app.use('/images', express.static('public/images'));
 
 
 app.listen(port, () => {
