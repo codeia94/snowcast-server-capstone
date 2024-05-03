@@ -48,7 +48,6 @@ const getTrailMapByProvince = async (req, res) => {
 			.select('*');
 		console.log(data);
 		res.json(data);
-		console.log(res);
 	} catch (error) {
 		console.error(error.message);
 		res.json({ message: `Error retrieving trail map by province: ${error.message}`})
