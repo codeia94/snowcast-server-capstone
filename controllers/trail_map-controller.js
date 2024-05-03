@@ -17,7 +17,7 @@ const getAllTrailMaps = async (_req, res) => {
   try {
     const data = await knex('trail_map')
       .join('mountains', 'trail_map.mountain_id', '=', 'mountains.id')
-      .select('*');
+      .select('trail_map.id', 'trail_map.mountain_id', 'trail_map.trailmap', 'trail_map.trail_name', 'mountains.name', 'mountains.lat', 'mountains.lon', 'mountains.province', 'mountains.img');
     res.json(data);
   } catch (err) {
     res.json({ message: `Error retrieving all trail maps: ${err}` });
