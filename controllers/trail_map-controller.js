@@ -39,8 +39,25 @@ const getTrailMap = async (req, res) => {
 };
 
 
+//GET trail_map by province
+const getTrailMapByProvince = async (req, res) => {
+	try {
+		const data = await knex('trail_map')
+			.join('mountains', 'trail_map.mountain_id', '=', 'mountains.id')
+			.where('mountains.province', req.params.province)
+			.select('*');
+		console.log(data);
+		res.json(data);
+		console.log(res);
+	} catch (error) {
+		console.error(error.message);
+		res.json({ message: `Error retrieving trail map by province: ${error.message}`})
+	}
+};
+
 module.exports = {
 	index,
 	getAllTrailMaps,
-	getTrailMap
+	getTrailMap,
+	getTrailMapByProvince
 };
