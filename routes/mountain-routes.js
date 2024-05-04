@@ -15,4 +15,9 @@ router.route("/province/:province")
 router.route("/mountain/:id")
 	.get(mountainController.currentDayWeather);
 
+
+router.route("/mountain/province/:province")
+	.get(mountainController.mountainForecastByProvince);
+
+
 module.exports = router;
