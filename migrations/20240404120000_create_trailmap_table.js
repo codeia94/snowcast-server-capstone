@@ -5,7 +5,6 @@ exports.up = function(knex) {
     table.string('trailmap').notNullable();
 		table.string('trail_name').notNullable();
 
-    // Define a foreign key constraint
     table.foreign('mountain_id').references('id').inTable('mountains');
   });
 };

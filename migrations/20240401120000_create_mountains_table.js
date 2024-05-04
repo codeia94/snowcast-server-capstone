@@ -7,7 +7,7 @@ exports.up = function (knex) {
 		table.string('province').notNullable();
 		table.string('country').notNullable();
 		table.string('img');
-		// table.string('cam');
+		table.string('description').notNullable();
 	});
 };
 

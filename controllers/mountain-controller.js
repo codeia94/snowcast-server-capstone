@@ -41,7 +41,7 @@ const currentDayWeather = async (req, res) => {
 	try {
 			const id = req.params.id;
 			const mountain = await knex('mountains').where('id', id).first();
-			console.log(mountain);
+			// console.log(mountain);
 			if (!mountain) {
 					return res.status(404).send('Mountain not found');
 			}
