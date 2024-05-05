@@ -34,6 +34,18 @@ const getMountainsByProvince = async (req, res) => {
 	}
 };
 
+//GET mountain by mountain id
+const getMountainById = async (req, res) => {
+	try {
+		const mountains = await knex('mountains')
+			.where('id', req.params.id)
+			.first();
+		res.json(mountains);
+    } catch (error) {
+			res.status(400).send(`Error retrieving mountains: ${error.message}`);
+	}
+}
+
 
 //GET mountain by mountain id from local DB and pass lat lon params to OpenWeatherMap API to get current weather
 const currentDayWeather = async (req, res) => {
@@ -66,6 +78,7 @@ const mountainForecastByProvince = async (req, res) => {
 			const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${mountain.lat}&lon=${mountain.lon}&exclude=daily,hourly,minutely&units=metric&appid=${process.env.WEATHER_API_KEY}`);
 			weather.push({
 				name: mountain.name,
+				mountain_id: mountain.id,
 				weather: response.data
 			});
 			console.log(response.data);
@@ -80,6 +93,7 @@ module.exports = {
 	index,
 	getProvince,
 	getMountainsByProvince,
+	getMountainById,
 	currentDayWeather,
 	mountainForecastByProvince
 }
