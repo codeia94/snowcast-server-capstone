@@ -11,7 +11,6 @@ const index = async (_req, res) => {
 	}
 };
 
-
 //GET /api/province
 const getProvince = async (_req, res) => {
 	try {
@@ -21,7 +20,6 @@ const getProvince = async (_req, res) => {
 		res.status(400).send(`Error retrieving province: ${error.message}`);
 	}
 };
-
 
 //GET /api/province/:province
 const getMountainsByProvince = async (req, res) => {

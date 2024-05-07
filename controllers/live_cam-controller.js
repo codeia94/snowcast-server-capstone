@@ -1,4 +1,3 @@
-const axios = require('axios');
 const knex = require('knex')(require('../knexfile'));
 
 //GET live_cam database
@@ -43,14 +42,12 @@ const getCamByProvince = async (req, res) => {
 			.join('mountains', 'live_cam.mountain_id', '=', 'mountains.id')
 			.where('mountains.province', req.params.province)
 			.select('*');
-		// console.log(data);
 		res.json(data);
 	} catch (error) {
 		console.error(error.message);
 		res.json({ message: `Error retrieving live cam by province: ${error.message}`})
 	}
 };
-
 
 
 module.exports = {

@@ -1,5 +1,3 @@
-const axios = require('axios');
-// const express = require('express');
 const knex = require('knex')(require('../knexfile'));
 
 //GET trail_map database
@@ -46,7 +44,6 @@ const getTrailMapByProvince = async (req, res) => {
 			.join('mountains', 'trail_map.mountain_id', '=', 'mountains.id')
 			.where('mountains.province', req.params.province)
 			.select('*');
-		// console.log(data);
 		res.json(data);
 	} catch (error) {
 		console.error(error.message);

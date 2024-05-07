@@ -10,6 +10,4 @@ router.route('/trailmap/:mountain_id')
 router.route('/trailmap/province/:province')
 	.get(trailMapController.getTrailMapByProvince);
 
-
-
 	module.exports = router;
