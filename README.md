@@ -12,6 +12,7 @@ $ npm i dotenv
 
 Make sure to create a .env file
 
+```
 $ npx knex migrate:latest
 $ npx knex seed:run
 
