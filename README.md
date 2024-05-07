@@ -10,7 +10,7 @@ $ npm i knex
 $ npm i dotenv
 ```
 
-Make sure to create a ```.env```` file
+Make sure to create a .env file
 
 $ npx knex migrate:latest
 $ npx knex seed:run
