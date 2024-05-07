@@ -20,7 +20,6 @@ $ node --watch index.js
 ```
 
 ### MySql
-```
 
 Ensure that MySql is connected
 
