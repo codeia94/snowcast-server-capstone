@@ -21,5 +21,5 @@ app.use('/trailmaps', express.static('public/trailmaps'));
 
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Database connected on port ${port}`);
 });
