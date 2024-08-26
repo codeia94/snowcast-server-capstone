@@ -8,7 +8,7 @@ const trailMapRouter = require("./routes/trailmap-routes");
 const liveCamRouter = require("./routes/livecam-routes");
 
 const corsOptions = {
-  origin: 'https://codeia94.github.io/',
+  origin: 'https://codeia94.github.io',
   optionsSuccessStatus: 200
 };
 
