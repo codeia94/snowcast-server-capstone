@@ -18,7 +18,9 @@ app.use('/icons', express.static('public/icons'));
 app.use('/images', express.static('public/images'));
 app.use('/trailmaps', express.static('public/trailmaps'));
 
-
+app.get('/', function (req, res) {
+  res.send('Server is working')
+})
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
