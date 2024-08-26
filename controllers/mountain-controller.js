@@ -57,7 +57,7 @@ const currentDayWeather = async (req, res) => {
 			const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${mountain.lat}&lon=${mountain.lon}&exclude=minutely&units=metric&appid=${process.env.WEATHER_API_KEY}`);
 			//GET weather condition from response
 			const weatherIcon = response.data.current.weather[0].icon;			
-			const weatherIconUrl = `http://localhost:8080/icons/${weatherIcon}.png`
+			const weatherIconUrl = `https://snowcast-server-df25b44e24b0.herokuapp.com/icons/${weatherIcon}.png`
 
 			res.status(200).json({...response.data, weatherIconUrl});
 	} catch (error) {
