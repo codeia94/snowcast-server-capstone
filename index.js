@@ -7,7 +7,12 @@ const mountainRouter = require("./routes/mountain-routes");
 const trailMapRouter = require("./routes/trailmap-routes");
 const liveCamRouter = require("./routes/livecam-routes");
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://codeia94.github.io/snowcast-client-capstone/',
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 
