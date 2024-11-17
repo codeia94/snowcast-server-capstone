@@ -45,7 +45,7 @@ const getMountainById = async (req, res) => {
 }
 
 
-//GET mountain by mountain id from local DB and pass lat lon params to OpenWeatherMap API to get current weather
+//GET mountain by mountain id from heroku DB and pass lat lon params to OpenWeatherMap API to get current weather
 const currentDayWeather = async (req, res) => {
 	try {
 			const id = req.params.id;
